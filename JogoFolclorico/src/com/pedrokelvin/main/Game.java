@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import com.pedrokelvin.entities.Entity;
 import com.pedrokelvin.entities.Player;
 import com.pedrokelvin.graficos.Spritesheet;
+import com.pedrokelvin.world.World;
 
 public class Game  extends Canvas implements Runnable, KeyListener{
 	
@@ -25,16 +26,18 @@ public class Game  extends Canvas implements Runnable, KeyListener{
 	public static JFrame frame;
 	private Thread thread;
 	private boolean isRunning = true;
-	private final int WIDTH = 480;
-	private final int HEIGHT = 320;
-	private final int SCALE = 2;
+	public static final int WIDTH = 480;
+	public static final int HEIGHT = 320;
+	public static final int SCALE = 2;
 	
 	private BufferedImage image;
 	
-	public List<Entity> entities;
-	public Spritesheet spritesheet;
+	public static List<Entity> entities;
+	public static Spritesheet spritesheet;
 	
-	private Player player;
+	public static World world;
+	
+	public static Player player;
 	
 	
 	public Game(){
@@ -51,6 +54,9 @@ public class Game  extends Canvas implements Runnable, KeyListener{
 		}
 		player = new Player(0,0,32,32,spritesheet.getSprite(0, 0, 32, 32));
 		entities.add(player);
+		world = new World("/map.png");
+		
+		
 	}
 	
 	public void initFrame() {
@@ -106,6 +112,7 @@ public class Game  extends Canvas implements Runnable, KeyListener{
 		
 		/*Renderização do jogo*/
 		//Graphics2D g2 = (Graphics2D) g;
+		world.render(g);
 		for(int i=0; i<entities.size(); i++) {
 			Entity e = entities.get(i);
 			e.render(g);
@@ -124,7 +131,7 @@ public class Game  extends Canvas implements Runnable, KeyListener{
 		double delta = 0;
 		int frames =0;
 		double timer = System.currentTimeMillis();
-		
+		requestFocus();
 		while (isRunning) {
 			long now = System.nanoTime();
 			delta+=(now-lastTime)/ns;
