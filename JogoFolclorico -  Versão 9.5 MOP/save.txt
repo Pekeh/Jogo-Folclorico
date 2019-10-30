@@ -1,0 +1,8 @@
+level:S
+vida:SN
+ammo:ORN
+mana:VS
+lanca:O
+zarabatana:O
+tridente:O
+fireball:O
