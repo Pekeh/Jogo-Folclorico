@@ -1,0 +1,8 @@
+level:R
+vida:UU
+ammo:WV
+mana:N
+lanca:O
+zarabatana:O
+tridente:N
+fireball:N
