@@ -1,0 +1,8 @@
+level:P
+vida:VT
+ammo:RW
+mana:N
+lanca:O
+zarabatana:O
+tridente:N
+fireball:N
