@@ -1,0 +1,8 @@
+level:S
+vida:WV
+ammo:KO
+mana:PN
+lanca:O
+zarabatana:O
+tridente:N
+fireball:O
