@@ -1,0 +1,8 @@
+level:OQ
+vida:WR
+ammo:PNS
+mana:N
+lanca:O
+zarabatana:O
+tridente:O
+fireball:O
